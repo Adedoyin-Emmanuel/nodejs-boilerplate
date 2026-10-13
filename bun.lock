@@ -24,6 +24,7 @@
         "eslint-config-airbnb-base": "latest",
         "eslint-plugin-import": "latest",
         "globals": "latest",
+        "prettier": "latest",
         "rimraf": "latest",
         "typescript": "latest",
       },
