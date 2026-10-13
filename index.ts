@@ -3,8 +3,6 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import express from "express";
-import "express-async-errors";
-import bodyParser from "body-parser";
 
 import { PORT } from "./constants/app";
 import corsOptions from "./utils/cors-options";
@@ -17,10 +15,9 @@ const app = express();
 
 app.use(cors(corsOptions));
 
-app.use(bodyParser.json({}));
 app.use(morgan("dev"));
 app.use(helmet());
-app.use(bodyParser.json({ limit: "1mb" }));
+app.use(express.json({ limit: "1mb" }));
 
 app.use("/v1", baseRouter);
 
